@@ -1,11 +1,47 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/react/Header';
+import Hero from '../components/react/Hero';
+import Servicios from '../components/react/Servicios';
+import PorQueElegirnos from '../components/react/PorQueElegirnos';
+import ComoTrabajamos from '../components/react/ComoTrabajamos';
+import Opiniones from '../components/react/Opiniones';
+import FAQ from '../components/react/FAQ';
+import Contacto from '../components/react/Contacto';
+import Footer from '../components/react/Footer';
+import WhatsAppButton from '../components/react/WhatsAppButton';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Lubricentro Senzabello | Cambio de aceite en Florencio Varela">
+  <!-- Header fijo -->
+  <Header client:load />
+  
+  <main>
+    <!-- Hero Section -->
+    <Hero client:load />
+    
+    <!-- Servicios -->
+    <Servicios client:visible />
+    
+    <!-- Por qué elegirnos -->
+    <PorQueElegirnos client:visible />
+    
+    <!-- Cómo trabajamos -->
+    <ComoTrabajamos client:visible />
+    
+    <!-- Opiniones -->
+    <Opiniones client:visible />
+    
+    <!-- FAQ -->
+    <FAQ client:visible />
+    
+    <!-- Contacto -->
+    <Contacto client:visible />
+  </main>
+  
+  <!-- Footer -->
+  <Footer client:visible />
+  
+  <!-- Botón flotante de WhatsApp -->
+  <WhatsAppButton client:load />
 </Layout>
